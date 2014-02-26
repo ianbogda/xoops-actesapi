@@ -50,15 +50,15 @@ define("_MI_ACTESAPI_BLOCK_NAME2" , "Block title 2");
 define("_MI_ACTESAPI_BLOCK_NAME2_DESC" , "My second block with actesapi module");
 
 // Config Settings
-define("_MI_ACTESAPI_CONF1" , "Site Name");
-define("_MI_ACTESAPI_CONF1_DESC" , "Put here the page title, visible at the top of the browser");
-define("_MI_ACTESAPI_CONF1_DEFAULT" , "ActesAPI Website");
-define("_MI_ACTESAPI_CONF2" , "Title page 1");
-define("_MI_ACTESAPI_CONF2_DESC" , "Put here your page title");
-define("_MI_ACTESAPI_CONF2_DEFAULT" , "My's first page");
-define("_MI_ACTESAPI_CONF3" , "Meta keywords - Page 1");
-define("_MI_ACTESAPI_CONF3_DESC" , "Put here keyword, keyword1, keyword2, keyword3, etc.");
-define("_MI_ACTESAPI_CONF3_DEFAULT" , "");
+define("_MI_ACTESAPI_CONF1" , "API URL");
+define("_MI_ACTESAPI_CONF1_DESC" , "API URL");
+define("_MI_ACTESAPI_CONF1_DEFAULT" , "6c65f7b51af7ed322c95b7a96c1218b23eea8b288785b8424d3d6aa9d2cd1881");
+define("_MI_ACTESAPI_CONF2" , "API KEY");
+define("_MI_ACTESAPI_CONF2_DESC" , "API KEY");
+define("_MI_ACTESAPI_CONF2_DEFAULT" , "6c65f7b51af7ed322c95b7a96c1218b23eea8b288785b8424d3d6aa9d2cd1881");
+define("_MI_ACTESAPI_CONF3" , "API secret");
+define("_MI_ACTESAPI_CONF3_DESC" , "API secret");
+define("_MI_ACTESAPI_CONF3_DEFAULT" , "6c65f7b51af7ed322c95b7a96c1218b23eea8b288785b8424d3d6aa9d2cd1881");
 define("_MI_ACTESAPI_CONF4" , "Meta description - Page 1");
 define("_MI_ACTESAPI_CONF4_DESC" , "Put here the page description line that often appears in search results.");
 define("_MI_ACTESAPI_CONF4_DEFAULT" , "");

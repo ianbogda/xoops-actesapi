@@ -1,24 +1,31 @@
 <!-- $Id $ -->
 <div id="myid">
 
-	<!--  html code and define example -->
-	<h1>Html</h1>
-	<p>Bonjour le monde</p>
-	<p><{$smarty.const._MD_ACTESAPI_TXT1}></p>
-	
-		<!-- or include extern html page -->
-		<object style="width:500px; height:auto; border: 0; overflow: hidden;" data="include/mypageinhtml.html" type="text/html"></object>
+<h2>Liste des actes</h2>
 
-	<hr />
+<table>
+	<tr>
+		<th>N° de l'acte</th>
+		<th>Objet</th>
+		<th>Date de la décision</th>
+		<th>Nature</th>
+		<th>Statut</th>
+	</tr>
 
-	<!-- php code and define example -->
-	<{php}>
-		echo "<h1>Php</h1><h4>Plain text</h4>";
-		echo "<div><p>Hello World</p></div>";
-		echo _MD_ACTESAPI_TXT1;
-	<{/php}>
-	
-		<!-- or include extern php page -->
-		<{include_php file='include/mypageinphp.php'}>
-
+<{section name=acte loop=$actes}>
+	<tr>
+		<td><a href="detailActe.php?id=<{$actes[acte].acteid}>"><{$actes[acte].NumeroInterne}></a></td>
+		<td><a href="detailActe.php?id=<{$actes[acte].acteid}>"><{$actes[acte].Objet}></a></td>
+		<td><{$actes[acte].dateacte}></td>
+		<td><a href="detailActe.php?id=<{$actes[acte].acteid}>"><{$actes[acte].CodeNatureActeNom}></a></td>
+		<td><a href="detailActe.php?id=<{$actes[acte].acteid}>">
+			<{if     $actes[acte].annulationacteid}><{$actes[acte].annulationDateReception}> : Annulation
+			<{elseif $actes[acte].anomalieacteid  }><{$actes[acte].anomalieDateReception}> : Anomalie
+			<{elseif $actes[acte].aracteid        }><{$actes[acte].aracteDateReception}> : AR Préfecture
+			<{else                                }><{$actes[acte].dateacte}> : envoi à la Préfecture
+			<{/if}></a>
+		</td>
+    </tr>
+<{/section}>
+</table>
 </div>
