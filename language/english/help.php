@@ -17,30 +17,24 @@
  * @version	$Id: help.php 466 2010-12-13 23:58:19Z kris_fr $
 **/
 
-define("_AM_ACTESAPI_HELP1" , "<p><strong>Note:</strong>This section helps to create a module will be updated as and when future developments of <span class='bold italic'>\"ActesAPI\"</span>.</p>");
+define("_AM_ACTESAPI_HELP1" , "<p><strong>Note:</strong>This section helps to set the <span class='bold italic'>\"ActesAPI\"</span> module.</p>");
 define("_AM_ACTESAPI_HELP2" , "
-<h4>Cloning Module</h4>
-<p>ActesAPI module was designed to make it easy cloning<br />In the proceedings below, we believe that you work in a local environment.</p>
+<h4>Settings Module</h4>
+<p>ActesAPI module need 3 values to run as expected.</p>
 <ol>
-	<li>Copy the file <span class='bold italic'>\"clone.php\"</span> found in the <span class='bold italic'>\"extras\"</span> folder at the root of your site</li>
-	<li>Edit this file, lines 18-20, replace the word <span class='bold italic'>\"newname\"</span> with the name you want - <u>Think case sensitive!</u></li>
-	<li>Save the edited file</li>
-	<li>In the address bar of your browser, run: <span class='italic'>http:\\websiteurl\clone.php</span></li>
-	<li>Your module has been created cloned!</li>
-	<li><u>Delete the file clone.php</u></li>
-	<li>If you wish, you can change the image <span class='italic'>\"images/nomdumodule_slogo.png\"</span>. You can file as \"psd\" in the \"docs\" folder of ActesAPI</li>
-	<li>Install the module in XOOPS administration, or start to change.</li>
+	<li>API URL is the URL where is the actesAPI</li>
+	<li>API KEY is the public key gave by the API server</li>
+	<li>API secret is the PRIVATE key gave by the API server</li>
 </ol>
+<br><hr><br>
 ");
 define("_AM_ACTESAPI_HELP3" , "
-<h4>In \"docs\" folder of this module:</h4>
+<h4>The ActeAPI doc is accessible :</h4>
 <ul>
-	<li><a class='tooltip' rel='external' href='../docs/creation_module_xoops2_v2_en.pdf' title='Module Creation - Basics Doc'>creation_module_xoops2_v2_en.pdf</a></li>
-	<li><a class='tooltip' rel='external' href='../docs/creation_module_xoops2_v2_fr.pdf' title='Module Creation - Basics Doc'>creation_module_xoops2_v2_fr.pdf</a></li>
-	<li><a class='tooltip' rel='external' href='../docs/xoops_module_structure_function.pdf' title='Module Function Structure'>xoops_module_structure_function.pdf</a></li>
-	<li><a class='tooltip' rel='external' href='../docs/smarty_xoops.pdf' title='Smarty Tags Docs'>smarty_xoops.pdf</a></li>
+	<li><a class='tooltip' rel='external' href='https://s2low.cdg46.fr/docs' title='actesAPI Documentation'>acteAPI</a></li>
 </ul>
 ");
+
 define("_AM_ACTESAPI_HELP4" , "<h4>Others documentations</h4>");
 define("_AM_ACTESAPI_HELP5" , "
 <h3>XOOPS Projet Documentation</h3>
@@ -68,6 +62,7 @@ define("_AM_ACTESAPI_HELP7" , "
 	<li><a class='tooltip' rel='external' href='http://www.w3.org/TR/html4/' title='Html W3C Standards'>Html</a></li>
 	<li><a class='tooltip' rel='external' href='http://www.w3.org/Style/CSS/' title='Css W3C Standards'>Css</a></li>
 	<li><a class='tooltip' rel='external' href='http://docs.jquery.com/Main_Page' title='jQuery Documentation'>jQuery</a></li>
+	<li><a class='tooltip' rel='external' href='https://s2low.cdg46.fr/docs' title='actesAPI Documentation'>acteAPI</a></li>
 </ul>
 ");
 

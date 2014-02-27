@@ -1,3 +1,14 @@
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis ligula lorem, consequat eget, tristique nec, auctor quis, purus. Vivamus ut sem. Fusce aliquam nunc vitae purus. Aenean viverra malesuada libero. Fusce ac quam. Donec neque. Nunc venenatis enim nec quam. Cras faucibus, justo vel accumsan aliquam, tellus dui fringilla quam, in condimentum augue lorem non tellus. Pellentesque id arcu non sem placerat iaculis. Curabitur posuere, pede vitae lacinia accumsan, enim nibh elementum orci, ut volutpat eros sapien nec sapien. Suspendisse neque arcu, ultrices commodo, pellentesque sit amet, ultricies ut, ipsum. Mauris et eros eget erat dapibus mollis. Mauris laoreet posuere odio. Nam ipsum ligula, ullamcorper eu, fringilla at, lacinia ut, augue. Nullam nunc.
+ActesAPI
 
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Duis ligula lorem, consequat eget, tristique nec, auctor quis, purus. Vivamus ut sem. Fusce aliquam nunc vitae purus. Aenean viverra malesuada libero. Fusce ac quam. Donec neque. Nunc venenatis enim nec quam. Cras faucibus, justo vel accumsan aliquam, tellus dui fringilla quam, in condimentum augue lorem non tellus.
+Encapsuleur pour l'actesAPI du CDGFPT46.
+ActesAPI est une API RESTFull qui permet aux collectivités de continuer d'accéder à leurs actes passés sur un TdT.
+Historiquement, c'était pour répondre au besoin lors du changement du TdT de s2low de l'Adullact vers STELA du SICTIAM.
+
+Version 1.0.0
+=============
+Implémentation de l'encapsuleur
+Suppression des fichiers inutiles
+
+Version 0.1.0
+=============
+clone du module depuis ghost (http://dev.xoofoo.org/modules/ghost/index.htmll)
