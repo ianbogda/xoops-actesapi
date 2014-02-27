@@ -9,11 +9,11 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
- * @copyright	The XOOPS Project http://sourceforge.net/projects/xoops/
+ * @copyright    The XOOPS Project http://sourceforge.net/projects/xoops/
  * @license             http://www.fsf.org/copyleft/gpl.html GNU public license
- * @package	ActesAPI
- * @since		2.3.0
- * @author	yann bogdanovic <http://pole-numerique.cdg46.fr>
+ * @package    ActesAPI
+ * @since        2.3.0
+ * @author    yann bogdanovic <http://pole-numerique.cdg46.fr>
 **/
 
 define("_MB_ACTESAPI_TXT1" , "Text in my first block !);

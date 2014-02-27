@@ -13,7 +13,7 @@
  * @license             http://www.fsf.org/copyleft/gpl.html GNU public license
  * @package    ActesAPI
  * @since        2.3.0
- * @author	yann bogdanovic <http://pole-numerique.cdg46.fr>
+ * @author    yann bogdanovic <http://pole-numerique.cdg46.fr>
 **/
 
 if ( !include("../../mainfile.php") ) {

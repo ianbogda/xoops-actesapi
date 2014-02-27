@@ -9,11 +9,11 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
- * @copyright	The XOOPS Project http://sourceforge.net/projects/xoops/
+ * @copyright    The XOOPS Project http://sourceforge.net/projects/xoops/
  * @license             http://www.fsf.org/copyleft/gpl.html GNU public license
- * @package	ActesAPI
- * @since		2.3.0
- * @author	yann bogdanovic <http://pole-numerique.cdg46.fr>
+ * @package    ActesAPI
+ * @since        2.3.0
+ * @author    yann bogdanovic <http://pole-numerique.cdg46.fr>
 **/
 
 if ( !include("../../mainfile.php") ) {
@@ -63,39 +63,39 @@ if(isset($xoTheme) && is_object($xoTheme)) {
 /* FUNCTION CURL */
 function get($route)
 {
-	global $xoopsModuleConfig;
+    global $xoopsModuleConfig;
 
-	$content     = '/api/v1/'.$route;
+    $content     = '/api/v1/'.$route;
 
-	$hash = hash_hmac('sha256', $content, $xoopsModuleConfig["actesapiconf3"]);
+    $hash = hash_hmac('sha256', $content, $xoopsModuleConfig["actesapiconf3"]);
 
-	$headers = array(
-		'X-Public: '. $xoopsModuleConfig["actesapiconf2"],
-		'X-Hash: '  . $hash
-	);
+    $headers = array(
+        'X-Public: '. $xoopsModuleConfig["actesapiconf2"],
+        'X-Hash: '  . $hash
+    );
 
-	$server = $xoopsModuleConfig["actesapiconf1"];
-	$url = $server.$content;
+    $server = $xoopsModuleConfig["actesapiconf1"];
+    $url = $server.$content;
 
-	$ch = curl_init($url);
-	curl_setopt_array($ch, array(
-		CURLOPT_RETURNTRANSFER => true,
+    $ch = curl_init($url);
+    curl_setopt_array($ch, array(
+        CURLOPT_RETURNTRANSFER => true,
 
-		CURLOPT_HTTPHEADER     => $headers,
-		CURLOPT_HEADER         => 0,
+        CURLOPT_HTTPHEADER     => $headers,
+        CURLOPT_HEADER         => 0,
 
-		CURLOPT_SSL_VERIFYPEER => false,
-		CURLOPT_SSL_VERIFYHOST => 0,
-		CURLOPT_SSLVERSION     => 3,
-		CURLOPT_PORT           => 443,
+        CURLOPT_SSL_VERIFYPEER => false,
+        CURLOPT_SSL_VERIFYHOST => 0,
+        CURLOPT_SSLVERSION     => 3,
+        CURLOPT_PORT           => 443,
 
-		CURLOPT_TIMEOUT        => 50,
-	));
+        CURLOPT_TIMEOUT        => 50,
+    ));
 
-	$result = curl_exec($ch);
-	curl_close($ch);
+    $result = curl_exec($ch);
+    curl_close($ch);
 
-	return $result;
+    return $result;
 }
 
 include(XOOPS_ROOT_PATH."/footer.php");
