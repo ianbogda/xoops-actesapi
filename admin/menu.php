@@ -13,8 +13,7 @@
  * @license             http://www.fsf.org/copyleft/gpl.html GNU public license
  * @package	ActesAPI
  * @since		2.3.0
- * @author 	kris <http://www.xoofoo.org>
- * @version	$Id: menu.php 517 2011-01-05 16:57:50Z kris_fr $
+ * @author	yann bogdanovic <http://pole-numerique.cdg46.fr>
 **/
 
 // admin menu title and link

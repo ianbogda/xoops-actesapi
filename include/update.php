@@ -13,8 +13,7 @@
  * @license             http://www.fsf.org/copyleft/gpl.html GNU public license
  * @package	ActesAPI
  * @since		2.3.0
- * @author 	Dugris <http://www.dugris.info>
- * @version	$Id: xoops_version.php 273 2010-05-14 14:40:51Z kris_fr $
+ * @author	yann bogdanovic <http://pole-numerique.cdg46.fr>
 **/
 
 if (!defined("XOOPS_ROOT_PATH")) { die("XOOPS root path not defined"); }

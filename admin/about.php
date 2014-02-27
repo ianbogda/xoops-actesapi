@@ -13,8 +13,7 @@
  * @license             http://www.fsf.org/copyleft/gpl.html GNU public license
  * @package	ActesAPI
  * @since		2.3.0
- * @author 	Dugris <http://www.dugris.info>
- * @version	$Id: about.php 1458 2013-02-03 23:30:46Z kris_fr $
+ * @author	yann bogdanovic <http://pole-numerique.cdg46.fr>
 **/
 
 include "header.php";

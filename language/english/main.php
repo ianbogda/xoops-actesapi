@@ -13,8 +13,7 @@
  * @license             http://www.fsf.org/copyleft/gpl.html GNU public license
  * @package	ActesAPI
  * @since		2.3.0
- * @author 	kris <http://www.xoofoo.org>
- * @version	$Id: main.php 419 2010-10-11 20:51:40Z kris_fr $
+ * @author	yann bogdanovic <http://pole-numerique.cdg46.fr>
 **/
 
 define("_MD_ACTESAPI_TXT1" , "First text with <em>\"ActesAPI\"</em> Module for Xoops");

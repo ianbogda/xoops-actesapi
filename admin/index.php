@@ -13,8 +13,7 @@
  * @license             http://www.fsf.org/copyleft/gpl.html GNU public license
  * @package	ActesAPI
  * @since		2.3.0
- * @author 	kris <http://www.xoofoo.org>
- * @version	$Id: index.php 466 2010-12-13 23:58:19Z kris_fr $
+ * @author	yann bogdanovic <http://pole-numerique.cdg46.fr>
 **/
 
 include "header.php";
