@@ -23,17 +23,17 @@ $adminmenu = array();
 $i = 1;
 $adminmenu[$i]["title"] = _MI_ACTESAPI_MANAGER_INDEX;
 $adminmenu[$i]["link"]  = "admin/index.php";
-$adminmenu[$i]["desc"] = _MI_ACTESAPI_MANAGER_INDEX_DESC;
-$adminmenu[$i]["icon"] = "images/icons/index.png";
+$adminmenu[$i]["desc"]  = _MI_ACTESAPI_MANAGER_INDEX_DESC;
+$adminmenu[$i]["icon"]  = "images/icons/index.png";
 $i++;
 $adminmenu[$i]["title"] = _MI_ACTESAPI_MANAGER_ABOUT;
 $adminmenu[$i]["link"]  = "admin/about.php";
-$adminmenu[$i]["desc"] = _MI_ACTESAPI_MANAGER_ABOUT_DESC;
-$adminmenu[$i]["icon"] = "images/icons/about.png";
+$adminmenu[$i]["desc"]  = _MI_ACTESAPI_MANAGER_ABOUT_DESC;
+$adminmenu[$i]["icon"]  = "images/icons/about.png";
 $i++;
 $adminmenu[$i]["title"] = _MI_ACTESAPI_MANAGER_HELP;
 $adminmenu[$i]["link"]  = "admin/help.php";
-$adminmenu[$i]["desc"] = _MI_ACTESAPI_MANAGER_HELP_DESC;
-$adminmenu[$i]["icon"] = "images/icons/help.png";
+$adminmenu[$i]["desc"]  = _MI_ACTESAPI_MANAGER_HELP_DESC;
+$adminmenu[$i]["icon"]  = "images/icons/help.png";
 
 ?>

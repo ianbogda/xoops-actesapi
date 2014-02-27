@@ -24,6 +24,7 @@ function xoops_module_update_actesapi() {
     if ( !call_user_func("xoops_module_pre_install_actesapi") ) {
         return false;
     }
+
     return true;
 }
 ?>

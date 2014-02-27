@@ -21,8 +21,8 @@ include "header.php";
 include_once XOOPS_ROOT_PATH."/modules/" . $xoopsModule->getVar("dirname") . "/class/menu.php";
 
 $menu = new actesapiMenu();
-$menu->addItem("about",       _AM_ACTESAPI_MANAGER_ABOUT,       "about.php");
-$menu->addItem("help",       _AM_ACTESAPI_MANAGER_HELP,       "help.php");
+$menu->addItem("about",       _AM_ACTESAPI_MANAGER_ABOUT,        "about.php");
+$menu->addItem("help",        _AM_ACTESAPI_MANAGER_HELP,         "help.php");
 $xoopsTpl->assign("actesapi_menu", $menu->_items );
 
 $admin = new actesapiMenu();
@@ -30,7 +30,7 @@ $admin->addItem("update",      _AM_ACTESAPI_MANAGER_UPDATE,      "../../system/a
 $admin->addItem("preferences", _AM_ACTESAPI_MANAGER_PREFERENCES, "../../system/admin.php?fct=preferences&amp;op=showmod&amp;&confcat_id=1&amp;mod=".$xoopsModule->getVar("mid") );
 $xoopsTpl->assign($xoopsModule->getVar("dirname") . "_admin", $admin->_items );
 
-$xoopsTpl->assign("module_dirname",         $xoopsModule->getVar("dirname") );
+$xoopsTpl->assign("module_dirname", $xoopsModule->getVar("dirname") );
 
 $xoopsTpl->display("db:admin/" . $xoopsModule->getVar("dirname") . "_admin_index.html");
 

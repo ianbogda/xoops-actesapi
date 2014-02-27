@@ -38,7 +38,7 @@ function readHeader($ch, $header)
 }
 
 /* Récupération du fichier et renvoi au navgateur pour téléchargment */
-$content     = '/api/v1/acte/'.$_GET['id'].'/document';
+$content = '/api/v1/acte/'.$_GET['id'].'/document';
 if (isset($_GET['tampon'])) $content.='/tampon';
 
 $hash = hash_hmac('sha256', $content, $privateHash);
@@ -81,18 +81,15 @@ foreach($responseHeaders["{$url}"] as $responseHeader)
 {
     if (false !== strpos($responseHeader, ':'))
     {
-
         list($header, $message) = explode(':', $responseHeader);
 
         if (in_array($header, array('Content-Type', 'Content-Disposition')))
         {
-
             if (false !== strpos($message, 'filename'))
             {
-
                 $fileNameFromHeader = str_replace(' attachment; filename=', '', $message);
-
             }
+
             header($header . ':' . $message);
         }
     }

@@ -26,7 +26,6 @@ define("_MI_ACTESAPI_DESC" , "ActesAPI / wrapper XOOPS for ActesAPI");
 
 // Main menu links
 define("_MI_ACTESAPI_SMNAME1" , "Liste des actes s2low");
-//define("_MI_ACTESAPI_SMNAME2" , "My link 2");
 
 // Admin menu links
 define("_MI_ACTESAPI_MANAGER_INDEX" , "Index");
@@ -42,13 +41,13 @@ define("_MI_ACTESAPI_DSCTPL2" , "Détail d'un acte");
 
 // Config Settings
 define("_MI_ACTESAPI_CONF1" ,      "API URL");
-define("_MI_ACTESAPI_CONF1_DESC" , "API URL");
+define("_MI_ACTESAPI_CONF1_DESC" , "API URL where is the API SERVER");
 define("_MI_ACTESAPI_CONF1_DEFAULT" , "https://s2low.cdg46.fr");
 define("_MI_ACTESAPI_CONF2" , "API KEY");
-define("_MI_ACTESAPI_CONF2_DESC" , "API KEY");
+define("_MI_ACTESAPI_CONF2_DESC" , "API KEY get from API Server");
 define("_MI_ACTESAPI_CONF2_DEFAULT" , "6c65f7b51af7ed322c95b7a96c1218b23eea8b288785b8424d3d6aa9d2cd1881");
 define("_MI_ACTESAPI_CONF3" , "API secret");
-define("_MI_ACTESAPI_CONF3_DESC" , "API secret");
+define("_MI_ACTESAPI_CONF3_DESC" , "API secret get from API Server");
 define("_MI_ACTESAPI_CONF3_DEFAULT" , "6c65f7b51af7ed322c95b7a96c1218b23eea8b288785b8424d3d6aa9d2cd1881");
 
 

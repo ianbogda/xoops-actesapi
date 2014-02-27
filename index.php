@@ -89,13 +89,11 @@ function get($route)
 {
     global $xoopsModuleConfig;
 
-    $content     = '/api/v1/'.$route;
-
-    $hash = hash_hmac('sha256', $content, $xoopsModuleConfig["actesapiconf3"]);
-
+    $content = '/api/v1/'.$route;
+    $hash    = hash_hmac('sha256', $content, $xoopsModuleConfig["actesapiconf3"]);
     $headers = array(
-        'X-Public: '. $xoopsModuleConfig["actesapiconf2"],
-        'X-Hash: '  . $hash
+        'X-Public: ' . $xoopsModuleConfig["actesapiconf2"],
+        'X-Hash: '   . $hash
     );
 
     $server = $xoopsModuleConfig["actesapiconf1"];
