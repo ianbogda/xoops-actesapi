@@ -2,7 +2,17 @@
 <div id="myid">
 
 <h2>Liste des actes</h2>
-
+<!--
+<p>
+<select id="perpage">
+<option value=10 selected>10</option>
+<option value=25>25</option>
+<option value=50>50</option>
+<option value=100>100</option>
+</select>
+<label for="perpage">Nombre d'actes par page</label>
+</p>
+-->
 <table>
 	<tr>
 		<th>N° de l'acte</th>
@@ -25,7 +35,17 @@
 			<{else                                }><{$actes[acte].dateacte}> : envoi à la Préfecture
 			<{/if}></a>
 		</td>
-    </tr>
+	</tr>
 <{/section}>
 </table>
+<!--
+<style>ul.paginate  {list-style-type: none;}ul.paginate li { display:inline;}</style>
+<ul class="paginate">
+<{foreach item=page from=$pages}>
+<li><a href="<{$page.url}>"><{$page.number}></a></li>
+<{/foreach}>
+</ul>
+
+Actes de <{$debut}> à <{$debut+$perpage}> sur <{$total}><br>
+-->
 </div>

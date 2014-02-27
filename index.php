@@ -38,15 +38,43 @@ $content = "coll/214602104/actes";
 
 // Construction des éléments pour une pagination
 $total = json_decode(get($content.'/total'));
-$total = $total[0];
-
+$total = $total[0]->total;
+/*
 if (isset($_GET['page']))    $content .= '/page/'    . $_GET['page'];
-if (isset($_GET['perpage'])) $content .= '/pagination/' . $_GET['perpage'];
+if (isset($_GET['perpage'])) $content .= '/pagination/' . $_GET['nbacte'];
 
-$perpage = (isset($_GET['perpage'])) ? $_GET['perpage'] : 10;
-$page    = (isset($_GET['page']))    ? $_GET['page']    : 1;
+$perpage = (isset($_GET['nbacte'])) ? $_GET['nbacte'] : 20;
+$page    = (isset($_GET['page']))   ? $_GET['page']   : 1;
 $debut = ($page - 1 ) * $perpage + 1;
+
+preg_match('/(\?\w+=\d+)(&\w+=\d+)/', $_SERVER['REQUEST_URI'], $query_string);
+
+
+$pages = ceil($total/$perpage);
+if ($pages > 1) {
+    for ($i = 1; $i <= $pages; ++$i) {
+
+        $vars = array(
+            'number' => $i,
+            'url'    => preg_replace('/(page=\d+)/', 'page='.$i, $query_string[0]),
+        );
+
+        if(isset($xoTheme) && is_object($xoTheme)) {
+            $xoopsTpl->append("pages", $vars);
+        }
+    }
+}
+if(isset($xoTheme) && is_object($xoTheme)) {
+    $xoopsTpl->assign("perpage", $perpage);
+    $xoopsTpl->assign("page",    $page);
+    $xoopsTpl->assign("total",   $total + 1);
+    $xoopsTpl->assign("debut",   $debut);
+}
+*/
 // fin pagination
+if(isset($xoTheme) && is_object($xoTheme)) {
+    $xoopsTpl->assign("total", $total);
+}
 
 //récupération des N actes de la liste de coll
 $actes = json_decode(get($content));
