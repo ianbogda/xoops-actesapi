@@ -18,7 +18,7 @@
 **/
 
 if (!defined("XOOPS_ROOT_PATH")) { die("XOOPS root path not defined"); }
-
+/*
 function xoops_module_install_actesapi(&$module){
 	// specific data for language
 	global $xoopsDB, $xoopsConfig;
@@ -26,7 +26,7 @@ function xoops_module_install_actesapi(&$module){
 	$xoopsDB->queryFromFile($f);
 	return true;
 }
-
+*/
 function xoops_module_pre_install_actesapi(){
 	$index_File = XOOPS_ROOT_PATH . "/modules/actesapi/include/index.html";
 	$blank_File = XOOPS_ROOT_PATH . "/modules/actesapi/images/blank.gif";
