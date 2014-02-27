@@ -49,7 +49,7 @@ $page    = (isset($_GET['page']))    ? $_GET['page']    : 1;
 $debut = ($page - 1 ) * $perpage + 1;
 // fin pagination
 
-récupération des N actes de la liste de coll
+//récupération des N actes de la liste de coll
 $actes = json_decode(get($content));
 
 $nactes = array();
