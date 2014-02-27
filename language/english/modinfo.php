@@ -41,13 +41,6 @@ define("_MI_ACTESAPI_MANAGER_HELP_DESC" , "Help pour module usage");
 define("_MI_ACTESAPI_DSCTPL1" , "Liste des actes");
 define("_MI_ACTESAPI_DSCTPL2" , "Détail d'un acte");
 
-// Blocks
-/*
-define("_MI_ACTESAPI_BLOCK_NAME1" , "Block title 1");
-define("_MI_ACTESAPI_BLOCK_NAME1_DESC" , "My first block with actesapi module");
-define("_MI_ACTESAPI_BLOCK_NAME2" , "Block title 2");
-define("_MI_ACTESAPI_BLOCK_NAME2_DESC" , "My second block with actesapi module");
-*/
 // Config Settings
 define("_MI_ACTESAPI_CONF1" ,      "API URL");
 define("_MI_ACTESAPI_CONF1_DESC" , "API URL");

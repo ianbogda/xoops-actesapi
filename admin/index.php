@@ -22,7 +22,6 @@ include "header.php";
 include_once XOOPS_ROOT_PATH."/modules/" . $xoopsModule->getVar("dirname") . "/class/menu.php";
 
 $menu = new actesapiMenu();
-$menu->addItem("example",  _AM_ACTESAPI_MANAGER_EXAMPLE,  "example.php" );
 $menu->addItem("about",       _AM_ACTESAPI_MANAGER_ABOUT,       "about.php");
 $menu->addItem("help",       _AM_ACTESAPI_MANAGER_HELP,       "help.php");
 $xoopsTpl->assign("actesapi_menu", $menu->_items );
