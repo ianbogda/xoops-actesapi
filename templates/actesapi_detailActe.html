@@ -1,0 +1,31 @@
+<!-- $Id $ -->
+<div id="myid">
+COUCOU
+<h2><{$Objet}></h2>
+<table>
+    <tr><td>Numéro de l'acte :</td>            <td><{$NumeroInterne}></td></tr>
+    <tr><td>Date de la décision :</td>         <td><{$dateacte}></td></tr>
+    <tr><td>Identifiant unique de l'acte :</td><td><{$IDActe}></td></tr>
+    <tr><td>Acte transmis par :</td>           <td><{$EmetteurReferentNom}></td></tr>
+    <tr><td>Collectivité émettrice :</td>      <td><{$siren}></td></tr>
+    <tr><td>Nature de l'acte :</td>            <td><{$CodeNatureActeNom}></td></tr>
+    <tr><td>Matière de l'acte :</td>           <td><{$CodeMatiereNom}></td></tr>
+    <tr><td>Document :</td>
+        <td>
+<{if $aracteid }>
+            <a href="getActe.php?id=<{$acteid}>&tampon" title="Télécharger le document tamponné"><{$DocumentNomFichier}></a>
+            &nbsp;<small><em>(
+<{/if}>
+            <a href="getActe.php?id=<{$acteid}>" title="Télécharger le document original">Document original</a>
+<{if $aracteid }>
+            )</em></small>
+<{/if}>
+        </td>
+    </tr>
+    <tr><td>Date de dépôt de l'acte :</td><td><{$dateacte}></td></tr>
+    <tr><td>Date d'envoi de l'acte :</td><td><{$env_DATE}></td></tr>
+<{if $aracteid         }><tr><td>Date de réception de l'AR :</td><td><{$aracteDateReception}></td></tr><{/if}>
+<{if $annulationacteid }><tr><td>Date de l'annulation :</td>     <td><{$annulationDateReception}></td></tr><{/if}>
+<{if $anomalieacteid   }><tr><td>Date de l'anomalie :</td>       <td><{$anomalieDateReception}></td></tr><{/if}>
+</table>
+</div>

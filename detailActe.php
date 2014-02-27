@@ -22,67 +22,43 @@ if ( !include("../../mainfile.php") ) {
 }
 $module_dirname = basename( dirname( __FILE__ ) ) ;
 
-
-
 global $xoopsModuleConfig;
 
 $actesapi_url     = $xoopsModuleConfig["actesapiconf1"];
 $actesapi_key     = $xoopsModuleConfig["actesapiconf2"];
 $actesapi_secret  = $xoopsModuleConfig["actesapiconf3"];
 
-$xoopsOption["template_main"] =  $module_dirname ."_index.html";
+$xoopsOption["template_main"] =  $module_dirname ."_detailActe.html";
 
 include(XOOPS_ROOT_PATH."/header.php");
 
-// FIXME
-$content = "coll/214602104/actes";
+// Récupération du détail de l'acte via l'API
+$acte = json_decode(get('acte/'.$_GET['id']));
+// Conversion en array
+$acte = (array) $acte[0];
 
-// Construction des éléments pour une pagination
-$total = json_decode(get($content.'/total'));
-$total = $total[0];
-
-if (isset($_GET['page']))    $content .= '/page/'    . $_GET['page'];
-if (isset($_GET['perpage'])) $content .= '/pagination/' . $_GET['perpage'];
-
-$perpage = (isset($_GET['perpage'])) ? $_GET['perpage'] : 10;
-$page    = (isset($_GET['page']))    ? $_GET['page']    : 1;
-$debut = ($page - 1 ) * $perpage + 1;
-// fin pagination
-
-récupération des N actes de la liste de coll
-$actes = json_decode(get($content));
-
-$nactes = array();
-$i = 0;
-foreach ($actes as $acte)
+// Récupération de la date de réception pref
+if (null !== $acte['aracteid'])
 {
-    $nacte = (array) $acte;
-
-    // Récupération de la date de réception pref
-    if (null !== $acte->aracteid)
-    {
-        $aracte = json_decode(get('acte/'.$acte->acteid.'/aracte'));
-        $nacte['aracteDateReception'] = $aracte[0]->DateReception;
-    }
-    // Récupération de la date de réception pref d'une anomalie
-    if (null !== $acte->anomalieacteid)
-    {
-        $anomalie = json_decode(get('acte/'.$acte->acteid.'/anomalie'));
-        $nacte['anomalieDateReception'] = $anomalie[0]->DateReception;
-    }
-    // Récupération de la date de réception pref de l'annulation
-    if (null !== $acte->annulationacteid)
-    {
-        $annulation = json_decode(get('acte/'.$acte->acteid.'/annulation'));
-        $nacte['annulationDateReception'] = $annulation[0]->DateReception;
-    }
-    $nactes[] = $nacte;
-
-    // Envoi des infos au template Smarty pour affichage
-    if(isset($xoTheme) && is_object($xoTheme)) {
-        $xoopsTpl->append("actes",$nactes[$i]);
-    }
-    ++$i;
+    $aracte = json_decode(get('acte/'.$acte['acteid'].'/aracte'));
+    $acte['aracteDateReception'] = $aracte[0]->DateReception;
+}
+// Récupération de la date de réception pref d'une anomalie
+if (null !== $acte->anomalieacteid)
+{
+    $anomalie = json_decode(get('acte/'.$acte['acteid'].'/anomalie'));
+    $acte['anomalieDateReception'] = $anomalie[0]->DateReception;
+}
+// Récupération de la date de réception pref de l'annulation
+if (null !== $acte->annulationacteid)
+{
+    $annulation = json_decode(get('acte/'.$acte['acteid'].'/annulation'));
+    $acte['annulationDateReception'] = $annulation[0]->DateReception;
+}
+$acte['env_DATE'] = preg_replace('/(\d{4})(\d{2})(\d{2})/', '$1-$2-$3', $acte['env_DATE']);
+// Envoi des infos au template Smarty pour affichage
+if(isset($xoTheme) && is_object($xoTheme)) {
+    $xoopsTpl->assign($acte);
 }
 
 /* FUNCTION CURL */

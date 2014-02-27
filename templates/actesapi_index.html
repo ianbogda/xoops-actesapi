@@ -15,7 +15,7 @@
 <{section name=acte loop=$actes}>
 	<tr>
 		<td><a href="detailActe.php?id=<{$actes[acte].acteid}>"><{$actes[acte].NumeroInterne}></a></td>
-		<td><a href="detailActe.php?id=<{$actes[acte].acteid}>"><{$actes[acte].Objet}></a></td>
+		<td><a href="detailActe.php?id=<{$actes[acte].acteid}>" title="<{$actes[acte].Objet}>"><{$actes[acte].Objet|truncate:90:"":true}></a></td>
 		<td><{$actes[acte].dateacte}></td>
 		<td><a href="detailActe.php?id=<{$actes[acte].acteid}>"><{$actes[acte].CodeNatureActeNom}></a></td>
 		<td><a href="detailActe.php?id=<{$actes[acte].acteid}>">
