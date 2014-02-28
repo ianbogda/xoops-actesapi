@@ -1,34 +1,26 @@
 <!-- $Id $ -->
-<div id="myid">
+<div id="actesapi-div">
 
 <h2>Liste des actes</h2>
-<!--
-<p>
-<select id="perpage">
-<option value=10 selected>10</option>
-<option value=25>25</option>
-<option value=50>50</option>
-<option value=100>100</option>
-</select>
-<label for="perpage">Nombre d'actes par page</label>
-</p>
--->
-<table>
-	<tr>
-		<th>N° de l'acte</th>
-		<th>Objet</th>
-		<th>Date de la décision</th>
-		<th>Nature</th>
-		<th>Statut</th>
-	</tr>
 
+<table id="actesapi-table">
+<thead>
+	<tr>
+		<th data-dynatable-column="id">N° de l'acte</th>
+		<th data-dynatable-column="objet">Objet</th>
+		<th data-dynatable-column="decision">Date de la décision</th>
+		<th data-dynatable-column="nature">Nature</th>
+		<th data-dynatable-column="statut">Statut</th>
+	</tr>
+</thead>
+<tbody>
 <{section name=acte loop=$actes}>
 	<tr>
-		<td><a href="detailActe.php?id=<{$actes[acte].acteid}>"><{$actes[acte].NumeroInterne}></a></td>
-		<td><a href="detailActe.php?id=<{$actes[acte].acteid}>" title="<{$actes[acte].Objet}>"><{$actes[acte].Objet|truncate:90:"":true}></a></td>
+		<td><a href="<{$xoops_url}>/modules/actesapi/detailActe.php?id=<{$actes[acte].acteid}>"><{$actes[acte].NumeroInterne}></a></td>
+		<td><a href="<{$xoops_url}>/modules/actesapi/detailActe.php?id=<{$actes[acte].acteid}>" title="<{$actes[acte].Objet}>"><{$actes[acte].Objet|truncate:90:"":true}></a></td>
 		<td><{$actes[acte].dateacte}></td>
-		<td><a href="detailActe.php?id=<{$actes[acte].acteid}>"><{$actes[acte].CodeNatureActeNom}></a></td>
-		<td><a href="detailActe.php?id=<{$actes[acte].acteid}>">
+		<td><a href="<{$xoops_url}>/modules/actesapi/detailActe.php?id=<{$actes[acte].acteid}>"><{$actes[acte].CodeNatureActeNom}></a></td>
+		<td><a href="<{$xoops_url}>/modules/actesapi/detailActe.php?id=<{$actes[acte].acteid}>">
 			<{if     $actes[acte].annulationacteid}><{$actes[acte].annulationDateReception}> : Annulation
 			<{elseif $actes[acte].anomalieacteid  }><{$actes[acte].anomalieDateReception}> : Anomalie
 			<{elseif $actes[acte].aracteid        }><{$actes[acte].aracteDateReception}> : AR Préfecture
@@ -37,15 +29,16 @@
 		</td>
 	</tr>
 <{/section}>
+</tbody>
 </table>
-<!--
-<style>ul.paginate  {list-style-type: none;}ul.paginate li { display:inline;}</style>
-<ul class="paginate">
-<{foreach item=page from=$pages}>
-<li><a href="<{$page.url}>"><{$page.number}></a></li>
-<{/foreach}>
-</ul>
 
-Actes de <{$debut}> à <{$debut+$perpage}> sur <{$total}><br>
--->
 </div>
+
+<link rel="stylesheet" type="text/css" media="all" href="js/dynatable/jquery.dynatable.css" />
+<script>window.jQuery || document.write('<script type="text/javascript" src="js/dynatable/vendor/jquery-1.7.2.min.js">\x3C/script>')</script>
+<script type="text/javascript" src="js/dynatable/jquery.dynatable.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#actesapi-table').dynatable();
+});
+</script>

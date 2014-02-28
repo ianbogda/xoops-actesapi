@@ -16,7 +16,7 @@
  * @author 	kris <http://www.xoofoo.org>
  * @version	$Id $
 **/
-
+@import('../js/dynatable/jquery.dynatable.css');
 #myid {}
-.paginate .active { display:inline-block;list-style:none; background-color: grey;}
+
 
