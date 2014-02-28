@@ -6,6 +6,7 @@
 <table id="actesapi-table">
 <thead>
     <tr>
+        <th style="display: none" data-dynatable-column="col">Collectivités</th>
         <th data-dynatable-column="id">N° de l'acte</th>
         <th data-dynatable-column="objet">Objet</th>
         <th data-dynatable-column="decision">Date de la décision</th>
@@ -16,6 +17,7 @@
 <tbody>
 <{section name=acte loop=$actes}>
     <tr>
+        <td><{$actes[acte].coll}></td>
         <td><a href="<{$xoops_url}>/modules/actesapi/detailActe.php?id=<{$actes[acte].acteid}>"><{$actes[acte].NumeroInterne}></a></td>
         <td><a href="<{$xoops_url}>/modules/actesapi/detailActe.php?id=<{$actes[acte].acteid}>" title="<{$actes[acte].Objet}>"><{$actes[acte].Objet|truncate:90:"":true}></a></td>
         <td><{$actes[acte].dateacte}></td>

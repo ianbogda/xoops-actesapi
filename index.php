@@ -21,10 +21,20 @@ if ( !include("../../mainfile.php") ) {
 }
 $module_dirname = basename( dirname( __FILE__ ) ) ;
 
+global $xoopsModuleConfig, $xoopsDB;
 
+// get collectivités from db
+$sql = 'SELECT siren, nom FROM ' . $xoopsDB->prefix('stelamiat_collectivites') . ' WHERE groupid IN (' . implode(',', $xoopsUser->getGroups()) . ')';
+$result = $xoopsDB->query($sql);
 
-global $xoopsModuleConfig;
+$sirens = $noms = array();
+while (list($siren, $nom) = $xoopsDB->fetchRow($result)) {
+    $sirens[]         = $siren;
+    $noms["{$siren}"] = $nom;
+}
+$sirens = implode(',', $sirens);
 
+// Module config
 $actesapi_url     = $xoopsModuleConfig["actesapiconf1"];
 $actesapi_key     = $xoopsModuleConfig["actesapiconf2"];
 $actesapi_secret  = $xoopsModuleConfig["actesapiconf3"];
@@ -33,48 +43,7 @@ $xoopsOption["template_main"] =  $module_dirname ."_index.html";
 
 include(XOOPS_ROOT_PATH."/header.php");
 
-// FIXME
-$content = "coll/214602104/actes";
-
-// Construction des éléments pour une pagination
-$total = json_decode(get($content.'/total'));
-$total = $total[0]->total;
-/*
-if (isset($_GET['page']))    $content .= '/page/'    . $_GET['page'];
-if (isset($_GET['perpage'])) $content .= '/pagination/' . $_GET['nbacte'];
-
-$perpage = (isset($_GET['nbacte'])) ? $_GET['nbacte'] : 20;
-$page    = (isset($_GET['page']))   ? $_GET['page']   : 1;
-$debut = ($page - 1 ) * $perpage + 1;
-
-preg_match('/(\?\w+=\d+)(&\w+=\d+)/', $_SERVER['REQUEST_URI'], $query_string);
-
-
-$pages = ceil($total/$perpage);
-if ($pages > 1) {
-    for ($i = 1; $i <= $pages; ++$i) {
-
-        $vars = array(
-            'number' => $i,
-            'url'    => preg_replace('/(page=\d+)/', 'page='.$i, $query_string[0]),
-        );
-
-        if(isset($xoTheme) && is_object($xoTheme)) {
-            $xoopsTpl->append("pages", $vars);
-        }
-    }
-}
-if(isset($xoTheme) && is_object($xoTheme)) {
-    $xoopsTpl->assign("perpage", $perpage);
-    $xoopsTpl->assign("page",    $page);
-    $xoopsTpl->assign("total",   $total + 1);
-    $xoopsTpl->assign("debut",   $debut);
-}
-*/
-// fin pagination
-if(isset($xoTheme) && is_object($xoTheme)) {
-    $xoopsTpl->assign("total", $total);
-}
+$content = "coll/{$sirens}/actes";
 
 //récupération des N actes de la liste de coll
 $actes = json_decode(get($content));
@@ -103,6 +72,8 @@ foreach ($actes as $acte)
         $annulation = json_decode(get('acte/'.$acte->acteid.'/annulation'));
         $nacte['annulationDateReception'] = $annulation[0]->DateReception;
     }
+
+    $nacte['coll'] = $noms[$nacte['siren']];
     $nactes[] = $nacte;
 
     // Envoi des infos au template Smarty pour affichage
