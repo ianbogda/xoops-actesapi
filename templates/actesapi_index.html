@@ -5,29 +5,29 @@
 
 <table id="actesapi-table">
 <thead>
-	<tr>
-		<th data-dynatable-column="id">N° de l'acte</th>
-		<th data-dynatable-column="objet">Objet</th>
-		<th data-dynatable-column="decision">Date de la décision</th>
-		<th data-dynatable-column="nature">Nature</th>
-		<th data-dynatable-column="statut">Statut</th>
-	</tr>
+    <tr>
+        <th data-dynatable-column="id">N° de l'acte</th>
+        <th data-dynatable-column="objet">Objet</th>
+        <th data-dynatable-column="decision">Date de la décision</th>
+        <th data-dynatable-column="nature">Nature</th>
+        <th data-dynatable-column="statut">Statut</th>
+    </tr>
 </thead>
 <tbody>
 <{section name=acte loop=$actes}>
-	<tr>
-		<td><a href="<{$xoops_url}>/modules/actesapi/detailActe.php?id=<{$actes[acte].acteid}>"><{$actes[acte].NumeroInterne}></a></td>
-		<td><a href="<{$xoops_url}>/modules/actesapi/detailActe.php?id=<{$actes[acte].acteid}>" title="<{$actes[acte].Objet}>"><{$actes[acte].Objet|truncate:90:"":true}></a></td>
-		<td><{$actes[acte].dateacte}></td>
-		<td><a href="<{$xoops_url}>/modules/actesapi/detailActe.php?id=<{$actes[acte].acteid}>"><{$actes[acte].CodeNatureActeNom}></a></td>
-		<td><a href="<{$xoops_url}>/modules/actesapi/detailActe.php?id=<{$actes[acte].acteid}>">
-			<{if     $actes[acte].annulationacteid}><{$actes[acte].annulationDateReception}> : Annulation
-			<{elseif $actes[acte].anomalieacteid  }><{$actes[acte].anomalieDateReception}> : Anomalie
-			<{elseif $actes[acte].aracteid        }><{$actes[acte].aracteDateReception}> : AR Préfecture
-			<{else                                }><{$actes[acte].dateacte}> : envoi à la Préfecture
-			<{/if}></a>
-		</td>
-	</tr>
+    <tr>
+        <td><a href="<{$xoops_url}>/modules/actesapi/detailActe.php?id=<{$actes[acte].acteid}>"><{$actes[acte].NumeroInterne}></a></td>
+        <td><a href="<{$xoops_url}>/modules/actesapi/detailActe.php?id=<{$actes[acte].acteid}>" title="<{$actes[acte].Objet}>"><{$actes[acte].Objet|truncate:90:"":true}></a></td>
+        <td><{$actes[acte].dateacte}></td>
+        <td><a href="<{$xoops_url}>/modules/actesapi/detailActe.php?id=<{$actes[acte].acteid}>"><{$actes[acte].CodeNatureActeNom}></a></td>
+        <td><a href="<{$xoops_url}>/modules/actesapi/detailActe.php?id=<{$actes[acte].acteid}>">
+            <{if     $actes[acte].annulationacteid}><{$actes[acte].annulationDateReception}> : Annulation
+            <{elseif $actes[acte].anomalieacteid  }><{$actes[acte].anomalieDateReception}> : Anomalie
+            <{elseif $actes[acte].aracteid        }><{$actes[acte].aracteDateReception}> : AR Préfecture
+            <{else                                }><{$actes[acte].dateacte}> : envoi à la Préfecture
+            <{/if}></a>
+        </td>
+    </tr>
 <{/section}>
 </tbody>
 </table>
@@ -39,6 +39,6 @@
 <script type="text/javascript" src="js/dynatable/jquery.dynatable.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
-	$('#actesapi-table').dynatable();
+    $('#actesapi-table').dynatable();
 });
 </script>
